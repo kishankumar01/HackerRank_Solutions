@@ -1,0 +1,60 @@
+#include<stdio.h>
+int main()
+{
+	int i,k=0,m,n,count=0;
+	scanf("%d\t%d",&m,&n);
+	if(m<n)
+	{
+		int temp;
+		temp=m;
+		m=n;
+		n=temp;
+	}
+	do
+	{
+		for(i=2;i<m;i++)
+		{
+			if(m%i==0)
+			{
+				count=count+1;
+				m=m/i;
+				break;
+			}
+		}
+		if(m==n)
+		{
+			k=1;
+			break;
+		}
+		if(i==m)
+		{
+			count=count+1;
+			break;
+		}	
+	}
+	while(m>1);
+	if(k=1)
+	printf("%d",count);
+	else
+	{
+		do
+		{
+			for(i=2;i<n;i++)
+			{
+				if(n%i==0)
+				{
+					count=count+1;
+					m=m/i;
+					break;
+				}
+			}
+			if(i==n)
+			{
+				count=count+1;
+				break;
+			}
+		}while(n>i);
+	}
+	printf("%d",count);
+	return 0;	
+}
